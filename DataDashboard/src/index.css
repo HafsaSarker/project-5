@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  color: white;
 }
 
 :root {
@@ -10,6 +11,7 @@
 
 
 .App {
+  display: flex;
   min-height: 100vh;
 }
 
