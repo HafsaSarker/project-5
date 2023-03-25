@@ -1,8 +1,8 @@
-export default function Card(){
+export default function Card(props){
     return (
         <div className="card">
-            <h1>description</h1>
-            <h2>title</h2>
+            <h1>{props.descr}</h1>
+            <h2>{props.title}</h2>
         </div>
     )
 }
