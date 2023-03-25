@@ -9,10 +9,13 @@
   background-color: #191919;
 }
 
+html {
+  height: 100vh;
+}
 
 .App {
   display: flex;
-  min-height: 100vh;
+  height: 100%;
 }
 
 button {

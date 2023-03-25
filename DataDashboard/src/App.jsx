@@ -7,7 +7,9 @@ const API_KEY = import.meta.env.VITE_APP_API_KEY;
 
 function App() {
   const [currWeather, setCurrWeather] = useState({})
-  
+  const [currDate, setCurrDate] = useState("");
+  const [pastDate, setPastDate] = useState("");
+
   useEffect(() => {
     const getCurrWeather = async () => {
       const response = await fetch(`https://api.weatherbit.io/v2.0/current?&city=NY&country=US&key=${API_KEY}`)
@@ -17,7 +19,8 @@ function App() {
     }
     getCurrWeather().catch(console.error);
   },[])
- 
+  
+
   return (
     <div className="App">
       <div className='navigation-bar'>
@@ -32,12 +35,22 @@ function App() {
           />
           <Card 
             descr={currWeather.temp + "°C"}
-            title={currWeather.clouds + "%"}
+            title={"☁️" +currWeather.clouds + "%"}
           />
           <Card 
             descr={currWeather.sunrise}
             title="sunrise"
           />
+        </div>
+
+        <div className='list-cotainer'>
+          <ul>
+            <li>Date</li>            
+            <li>Temperature</li>
+            <li>Cloud Coverage</li>
+            <li>Sunrise</li>
+            <li>Sunset</li>
+          </ul>
         </div>
       </div>
     </div>

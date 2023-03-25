@@ -39,3 +39,29 @@
 .feature-cards{
   display: flex;
 }
+.list-cotainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #8885ac;
+  margin: 30px 30px;
+  min-height: 500px;
+  min-width: 500px;
+  padding: 10px 10px;
+  border-radius: 15px;
+}
+
+.list-cotainer > ul {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: #737192;
+  border-radius: 15px;
+}
+
+.list-cotainer > ul > li {
+  list-style: none;
+  padding: 10px 0px;
+}
