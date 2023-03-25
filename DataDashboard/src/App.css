@@ -60,30 +60,23 @@
   background-color: #737192;
   border-radius: 15px;
   margin-bottom: 15px;
+  padding: 8px 0px;
 }
 
-.data-list{
+.data-table{
   display: flex;
   width: 90%;
   flex-direction: column;
-  border: solid;
-  justify-content: space-evenly;
-  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+  gap: 10px
 }
 
-.data-list-ul > li,
-.data-header > li {
-  list-style: none;
-  padding: 10px 0px;
+
+table, th, td {
+  text-align: center;
 }
 
-.data-list-ul {
-  display: flex;
-  flex-direction: row;
-
-  gap: 120px;
-}
-.data-list-ul > li {
-  
-  border: solid;
+td {
+  width: 150px;
 }

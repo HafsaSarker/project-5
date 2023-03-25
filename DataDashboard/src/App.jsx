@@ -49,13 +49,16 @@ function App() {
         </div>
 
         <div className='list-container'>
-          <ul className='data-header'>
-            <li>Date</li>            
-            <li>Low</li>
-            <li>High</li>
-            <li>Cloud Coverage</li>
-            <li>Precipitation</li>
-          </ul>
+          <table className='data-header'>
+            <tr>
+              <td>Date</td>            
+              <td>Low</td>
+              <td>High</td>
+              <td>Cloud Coverage</td>
+              <td>Precipitation</td>
+            </tr>
+            
+          </table>
 
           <List />
         </div>

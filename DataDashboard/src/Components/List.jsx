@@ -13,19 +13,19 @@ export default function List({setCurrDate, setPastDate}){
     },[])
 
     return (
-        <div className="data-list">
+        <table className="data-table">
             { pastWeather && pastWeather.map((date) => 
-                <ul className="data-list-ul">
-                    <li>{date.datetime}</li>
-                    <li>{date.min_temp + "°C"}</li>
-                    <li>{date.max_temp + "°C"}</li>
-                    <li>{date.clouds + "%"}</li>
-                    <li>{date.precip + "mm"}</li>
-                </ul>
+                <tr>
+                    <td>{date.datetime}</td>
+                    <td>{date.min_temp + "°C"}</td>
+                    <td>{date.max_temp + "°C"}</td>
+                    <td>{date.clouds + "%"}</td>
+                    <td>{date.precip + "mm"}</td>
+                </tr>
             ) 
             }
             
-        </div>
+        </table>
         
     )
 }
