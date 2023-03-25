@@ -39,7 +39,7 @@
 .feature-cards{
   display: flex;
 }
-.list-cotainer{
+.list-container{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -52,16 +52,38 @@
   border-radius: 15px;
 }
 
-.list-cotainer > ul {
+.data-header {
   display: flex;
   width: 100%;
   flex-direction: row;
   justify-content: space-evenly;
   background-color: #737192;
   border-radius: 15px;
+  margin-bottom: 15px;
 }
 
-.list-cotainer > ul > li {
+.data-list{
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  border: solid;
+  justify-content: space-evenly;
+  vertical-align: middle;
+}
+
+.data-list-ul > li,
+.data-header > li {
   list-style: none;
   padding: 10px 0px;
+}
+
+.data-list-ul {
+  display: flex;
+  flex-direction: row;
+
+  gap: 120px;
+}
+.data-list-ul > li {
+  
+  border: solid;
 }

@@ -1,8 +1,13 @@
+//filter ideas:
+  //filter by cloud% 
+  //filter by date start - date end
+
 import { useState, useEffect } from 'react'
 import Header from './Components/Header';
 import Navbar from './Components/Navbar';
 import Card from './Components/Card';
 import './App.css'
+import List from './Components/List';
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
 
 function App() {
@@ -43,14 +48,16 @@ function App() {
           />
         </div>
 
-        <div className='list-cotainer'>
-          <ul>
+        <div className='list-container'>
+          <ul className='data-header'>
             <li>Date</li>            
-            <li>Temperature</li>
+            <li>Low</li>
+            <li>High</li>
             <li>Cloud Coverage</li>
-            <li>Sunrise</li>
-            <li>Sunset</li>
+            <li>Precipitation</li>
           </ul>
+
+          <List />
         </div>
       </div>
     </div>
