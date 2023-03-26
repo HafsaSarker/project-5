@@ -63,9 +63,9 @@
   padding: 8px 0px;
 }
 
-.data-table{
+.data-table > tbody{
   display: flex;
-  width: 90%;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -73,10 +73,33 @@
 }
 
 
-table, th, td {
+table, tbody, th, td {
   text-align: center;
 }
 
 td {
   width: 150px;
+}
+.filters {
+  align-items: center;
+  margin: 10px 0px;
+}
+form {
+  gap: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+label{
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+}
+
+input {
+  color: #292929;
+}
+input:focus {
+  outline: none;
 }
