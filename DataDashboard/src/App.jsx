@@ -1,7 +1,3 @@
-//filter ideas:
-  //filter by cloud% 
-  //filter by date start - date end
-
 import { useState, useEffect } from 'react'
 import Header from './Components/Header';
 import Navbar from './Components/Navbar';
