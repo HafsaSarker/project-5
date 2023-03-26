@@ -12,9 +12,11 @@ const API_KEY = import.meta.env.VITE_APP_API_KEY;
 
 function App() {
   const [currWeather, setCurrWeather] = useState({})
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
-  const [cloudCoverageInput, setCloudCoverageInput] = useState(0);
+  const  [inputs, setInputs] = useState({
+    startDate: "2023-03-15",
+    endDate: "2023-03-24",
+    cloudCoverage: null
+  }); 
 
   useEffect(() => {
     const getCurrWeather = async () => {
@@ -25,10 +27,18 @@ function App() {
     }
     getCurrWeather().catch(console.error);
   },[])
-  
+
+  const handleChange = (event) => {
+    const {name, value} = event.target;
+    setInputs((prev) => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(startDate, endDate, cloudCoverageInput);
+    setRenderInputData(true);
   }
   return (
     <div className="App">
@@ -53,32 +63,32 @@ function App() {
         </div>
 
         <div className='list-container'>
-          <div className='filters'>
-              <form onSubmit={handleSubmit}> 
-                <label>
-                  Start Date<input
-                    type="date"
-                    onChange={(e) => setStartDate(e.target.value)}
-                  />
-                </label>
-                <label>
-                  End Date
-                  <input
-                    type="date"
-                    onChange={(e) => setEndDate(e.target.value)}
-                  />
-                </label>  
-                <label>
-                  Cloud Coverage
-                  <input
-                    type="range"
-                    min="0" 
-                    max="100"
-                    onChange={(e) => setCloudCoverageInput(e.target.value)}
-                  />
-                </label>
-                <button>Search</button>
-              </form>
+          <div className='filters'> 
+            <label>
+              Start Date<input
+                type="date"
+                name='startDate'
+                onChange={handleChange}
+              />
+            </label>
+            <label>
+              End Date
+              <input
+                type="date"
+                name='endDate'
+                onChange={handleChange}
+              />
+            </label>  
+            <label>
+              Cloud Coverage
+              <input
+                type="range"
+                min="0" 
+                max="100"
+                name='cloudCoverage'
+                onChange={handleChange}
+              />
+            </label>
           </div>
           <table className='data-header'>
             <tbody>
@@ -92,7 +102,9 @@ function App() {
             </tbody>       
           </table>
 
-          <List />
+          <List 
+            inputs={inputs}
+          />
         </div>
       </div>
     </div>
